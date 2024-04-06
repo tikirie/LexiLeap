@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctr0yef8la2a2"]
+
+[ext_resource type="Script" path="res://scripts/titlescreen.gd" id="1_e6cqq"]
+
+[node name="TitleScreen" type="Node2D"]
+
+[node name="Start" type="Button" parent="."]
+offset_left = 427.0
+offset_top = 284.0
+offset_right = 601.0
+offset_bottom = 372.0
+text = "Start"
+script = ExtResource("1_e6cqq")
+
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]

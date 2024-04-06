@@ -44,6 +44,11 @@ modulate = Color(0.815686, 0, 0.32549, 1)
 position = Vector2(0, 156)
 shape = SubResource("RectangleShape2D_bp8ql")
 
+[node name="Sprite2D" type="Sprite2D" parent="floor"]
+position = Vector2(-12.8821, 162.3)
+scale = Vector2(0.825289, 0.15811)
+texture = ExtResource("1_goc6p")
+
 [node name="platform3" type="StaticBody2D" parent="."]
 modulate = Color(0.419608, 0.160784, 0.113725, 1)
 position = Vector2(-71.1615, 55.8324)

@@ -50,6 +50,8 @@ position = Vector2(-39, 69)
 
 [node name="Player2" parent="." instance=ExtResource("2_cesl0")]
 top_level = true
+light_mask = 3
+visibility_layer = 3
 position = Vector2(9, 117)
 script = ExtResource("5_i4efu")
 controls = ExtResource("6_43u2n")

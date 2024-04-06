@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5mj5n5mcyrgd"]
-
-[ext_resource type="PackedScene" uid="uid://4etq23lry54j" path="res://background.tscn" id="1_vpyo5"]
-
-[node name="Main" type="Node2D"]
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("1_vpyo5")]
