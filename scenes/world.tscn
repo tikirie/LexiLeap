@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://duhoahqs04jav"]
+
+[ext_resource type="PackedScene" uid="uid://uv858we4b41t" path="res://scenes/level.tscn" id="1_3l0of"]
+[ext_resource type="PackedScene" uid="uid://bmt6u8lhvqu3s" path="res://scenes/player.tscn" id="1_l3maa"]
+[ext_resource type="Script" path="res://scenes/world.gd" id="1_rqchh"]
+[ext_resource type="PackedScene" uid="uid://cnikp87tisy46" path="res://scenes/player2.tscn" id="2_cesl0"]
+[ext_resource type="Resource" uid="uid://bisasoav4hu3u" path="res://scripts/p1_controls.tres" id="3_2d4jt"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="5_i4efu"]
+[ext_resource type="Resource" uid="uid://bat2mcqe4dd4m" path="res://scripts/p2_controls.tres" id="6_43u2n"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_5ihe2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bykrm"]
+size = Vector2(627, 86.5)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_rqchh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ViewportContainer" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/ViewportContainer"]
+handle_input_locally = false
+size = Vector2i(960, 1080)
+render_target_update_mode = 4
+
+[node name="Platform" type="StaticBody2D" parent="HBoxContainer/ViewportContainer/SubViewport"]
+visible = false
+top_level = true
+position = Vector2(3, 115)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="HBoxContainer/ViewportContainer/SubViewport/Platform"]
+position = Vector2(312, 255)
+scale = Vector2(623.5, 87.5)
+mesh = SubResource("QuadMesh_5ihe2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBoxContainer/ViewportContainer/SubViewport/Platform"]
+position = Vector2(310, 254)
+shape = SubResource("RectangleShape2D_bykrm")
+
+[node name="Level" parent="HBoxContainer/ViewportContainer/SubViewport" instance=ExtResource("1_3l0of")]
+position = Vector2(255, 181)
+
+[node name="Player" parent="HBoxContainer/ViewportContainer/SubViewport/Level" instance=ExtResource("1_l3maa")]
+top_level = true
+position = Vector2(-39, 69)
+controls = ExtResource("3_2d4jt")
+
+[node name="Player2" parent="HBoxContainer/ViewportContainer/SubViewport/Level" instance=ExtResource("2_cesl0")]
+top_level = true
+position = Vector2(9, 117)
+script = ExtResource("5_i4efu")
+controls = ExtResource("6_43u2n")
+jump_force = 800
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/ViewportContainer/SubViewport"]
+
+[node name="ViewportContainer2" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/ViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(960, 1080)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/ViewportContainer2/SubViewport"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://uv858we4b41t"]
+
+[ext_resource type="Texture2D" uid="uid://bji4p8h858hwy" path="res://assets/bg.jpg" id="1_qpw3p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp8ql"]
+size = Vector2(514, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ehns"]
+size = Vector2(49.5, 9.5)
+
+[node name="Level" type="Node2D"]
+position = Vector2(255, 127)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-134, -2)
+texture = ExtResource("1_qpw3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0.815686, 0, 0.32549, 1)
+position = Vector2(0, 156)
+shape = SubResource("RectangleShape2D_bp8ql")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-218, 106)
+shape = SubResource("RectangleShape2D_1ehns")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
