@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba7fajq1at0pk"]
+
+[ext_resource type="Script" path="res://scripts/SplitscreenComponent.gd" id="1_hrbxd"]
+[ext_resource type="Texture2D" uid="uid://bji4p8h858hwy" path="res://assets/bg.jpg" id="2_ktgrl"]
+[ext_resource type="PackedScene" uid="uid://uv858we4b41t" path="res://scenes/level.tscn" id="3_b3gik"]
+
+[node name="SplitscreenComponent" type="CanvasLayer"]
+script = ExtResource("1_hrbxd")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 2
+
+[node name="Container1" type="SubViewportContainer" parent="GridContainer"]
+layout_mode = 2
+stretch = true
+
+[node name="Viewport1" type="SubViewport" parent="GridContainer/Container1"]
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="GridContainer/Container1/Viewport1"]
+
+[node name="Level" parent="GridContainer/Container1/Viewport1" instance=ExtResource("3_b3gik")]
+
+[node name="Container2" type="SubViewportContainer" parent="GridContainer/Container1"]
+layout_mode = 2
+stretch = true
+
+[node name="Viewport2" type="SubViewport" parent="GridContainer/Container1/Container2"]
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="GridContainer/Container1/Container2/Viewport2"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+visibility_layer = 524288
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ktgrl")
+
+[editable path="GridContainer/Container1/Viewport1/Level"]
