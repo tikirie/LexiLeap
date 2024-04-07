@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnikp87tisy46"]
+[gd_scene load_steps=4 format=3 uid="uid://cnikp87tisy46"]
 
 [ext_resource type="Texture2D" uid="uid://dwf3rhx1n6hvr" path="res://icon.svg" id="2_k1rqn"]
 
 [sub_resource type="GDScript" id="GDScript_k5yp1"]
 script/source = "extends CharacterBody2D
 
-@export var speed = 300
-@export var gravity = 30
-@export var jump_force = 300
+@export var speed = 500
+@export var gravity = 50
+@export var jump_force = 1300
 
 func _physics_process(delta):
 	#each frame the player isn't on the floor, gravity increases
@@ -25,15 +25,10 @@ func _physics_process(delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dj7bh"]
-size = Vector2(49, 119)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg5v"]
-size = Vector2(46.5, 116)
+size = Vector2(49, 32.5)
 
 [node name="Player" type="CharacterBody2D" groups=["player2"]]
 position = Vector2(-168, -167)
-collision_layer = 2
-collision_mask = 5
 script = SubResource("GDScript_k5yp1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -42,11 +37,5 @@ scale = Vector2(0.398905, 0.919122)
 texture = ExtResource("2_k1rqn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(195, 108)
+position = Vector2(195, 151.25)
 shape = SubResource("RectangleShape2D_dj7bh")
-
-[node name="Hitbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(193.75, 108)
-shape = SubResource("RectangleShape2D_ntg5v")
