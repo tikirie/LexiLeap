@@ -2,26 +2,34 @@
 
 [ext_resource type="FontVariation" uid="uid://c5gnr8gvlibmp" path="res://assets/press_start.tres" id="1_2h08m"]
 [ext_resource type="Script" path="res://scripts/titlescreen.gd" id="1_e6cqq"]
-[ext_resource type="Texture2D" uid="uid://bji4p8h858hwy" path="res://assets/bg.jpg" id="3_i7uka"]
+[ext_resource type="Texture2D" uid="uid://blktitvjjxtxf" path="res://assets/TitleScreen.png" id="1_tfhs5"]
 
-[node name="TitleScreen" type="Node2D"]
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(964, 544)
+texture = ExtResource("1_tfhs5")
 
 [node name="Start" type="Button" parent="."]
-offset_left = 456.0
-offset_top = 356.0
-offset_right = 1134.0
-offset_bottom = 696.0
+top_level = true
+offset_left = 648.0
+offset_top = 686.0
+offset_right = 1230.0
+offset_bottom = 944.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_2h08m")
 theme_override_font_sizes/font_size = 48
 text = "Start"
+flat = true
 script = ExtResource("1_e6cqq")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-show_behind_parent = true
-position = Vector2(768, 476)
-scale = Vector2(6.38667, 2.63265)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture = ExtResource("3_i7uka")
 
 [connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
