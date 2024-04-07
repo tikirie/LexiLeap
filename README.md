@@ -1,8 +1,12 @@
-# Lexi Leap
+# LexiLeap
 *LexiLeap* is a two-player English language learning game where you and a friend can take control of a character on one side of a split-screen and 
 leap your way to the top by navigating the sky. Along the way, you will encounter a word and players must quickly decide whether the following 
 words you run into are either synonyms that will give you a boost, or antonyms that can hinder your progress. Challenge a friend to test your vocabulary and reflexes 
 and see who wins!
+
+### Set-up Instructions
+
+Please go to the branch labeled "Kelly3" and run the executable there :)
 
 ### Dependencies
 
@@ -13,10 +17,6 @@ and see who wins!
   - "A large lexical database of English. Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept"
   - Princeton University "About WordNet." WordNet. Princeton University. 2010.
 - etc.
-
-### Set-up Instructions
-
-idk man
 
 ### Reflection
 
