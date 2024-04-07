@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 @export var controls: Resource = null
-@export var speed = 300
-@export var gravity = 30
-@export var jump_force = 1000
-
+@export var speed = 500
+@export var gravity = 50
+@export var jump_force = 1300
+	
 func _physics_process(delta):
 	#each frame the player isn't on the floor, gravity increases
 	if !is_on_floor():

@@ -5,10 +5,11 @@
 [ext_resource type="Resource" uid="uid://bisasoav4hu3u" path="res://scripts/p1_controls.tres" id="2_cyr4q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dj7bh"]
-size = Vector2(49, 119)
+size = Vector2(51.5, 25)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(3, 3)
+slide_on_ceiling = false
 script = ExtResource("1_tfeid")
 controls = ExtResource("2_cyr4q")
 
@@ -18,5 +19,6 @@ scale = Vector2(0.125935, 0.353868)
 texture = ExtResource("1_8wiju")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(183, 147)
+position = Vector2(181.75, 196.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dj7bh")

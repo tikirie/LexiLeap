@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://bat2ud4hbaajv"]
 
-[ext_resource type="Script" path="res://scripts/Platform_test.gd" id="1_rxi82"]
-[ext_resource type="Texture2D" uid="uid://b2jfn8ugwqj4" path="res://assets/platform.png" id="2_cwgpf"]
+[ext_resource type="Script" path="res://scripts/Platform_test.gd" id="1_hbmkb"]
+[ext_resource type="Texture2D" uid="uid://b2jfn8ugwqj4" path="res://assets/platform.png" id="2_dw831"]
 
-[node name="PlatformTest" type="StaticBody2D"]
+[node name="PlatformTest" type="StaticBody2D" groups=["paddles"]]
 position = Vector2(135, 55)
-script = ExtResource("1_rxi82")
+script = ExtResource("1_hbmkb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(167.5, 69.5)
 scale = Vector2(1.1875, 1.6875)
-texture = ExtResource("2_cwgpf")
+texture = ExtResource("2_dw831")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(105, 51)

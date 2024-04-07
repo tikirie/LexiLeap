@@ -5,9 +5,9 @@
 [sub_resource type="GDScript" id="GDScript_k5yp1"]
 script/source = "extends CharacterBody2D
 
-@export var speed = 300
-@export var gravity = 30
-@export var jump_force = 300
+@export var speed = 500
+@export var gravity = 50
+@export var jump_force = 1300
 
 func _physics_process(delta):
 	#each frame the player isn't on the floor, gravity increases
@@ -25,7 +25,7 @@ func _physics_process(delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dj7bh"]
-size = Vector2(49, 119)
+size = Vector2(49, 32.5)
 
 [node name="Player" type="CharacterBody2D" groups=["player2"]]
 position = Vector2(-168, -167)
@@ -37,5 +37,5 @@ scale = Vector2(0.398905, 0.919122)
 texture = ExtResource("2_k1rqn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(195, 108)
+position = Vector2(195, 151.25)
 shape = SubResource("RectangleShape2D_dj7bh")

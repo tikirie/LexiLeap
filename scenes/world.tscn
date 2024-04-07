@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bmt6u8lhvqu3s" path="res://scenes/player.tscn" id="1_l3maa"]
 [ext_resource type="PackedScene" uid="uid://cnikp87tisy46" path="res://scenes/player2.tscn" id="2_cesl0"]
-[ext_resource type="Texture2D" uid="uid://bji4p8h858hwy" path="res://assets/bg.jpg" id="3_v35f7"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="5_i4efu"]
 [ext_resource type="Resource" uid="uid://bat2mcqe4dd4m" path="res://scripts/p2_controls.tres" id="6_43u2n"]
+[ext_resource type="Texture2D" uid="uid://b775h0qj0q1os" path="res://assets/sampleBackground.jpg" id="6_anyyr"]
 
 [sub_resource type="GDScript" id="GDScript_oc4hm"]
 script/source = "extends Node2D
@@ -65,8 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1101, 620)
-scale = Vector2(9.175, 3.43333)
-texture = ExtResource("3_v35f7")
-region_rect = Rect2(1920, 1080, 0, 0)
+[node name="SampleBackground" type="Sprite2D" parent="."]
+position = Vector2(1101.5, 619)
+scale = Vector2(4.67872, 2.02288)
+texture = ExtResource("6_anyyr")

@@ -41,3 +41,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 1000000000
 limit_bottom = 1000
+
+[node name="SampleBackground" type="Sprite2D" parent="."]
+position = Vector2(963.5, 542)
+scale = Vector2(4.1, 1.75817)

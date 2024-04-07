@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4nhao5bialp8"]
 
-[ext_resource type="Texture2D" uid="uid://bji4p8h858hwy" path="res://assets/bg.jpg" id="1_bhyta"]
+[ext_resource type="Texture2D" uid="uid://b775h0qj0q1os" path="res://assets/sampleBackground.jpg" id="2_d5ho8"]
 
 [node name="Background" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(0, 360)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-texture_filter = 1
-texture = ExtResource("1_bhyta")
-offset = Vector2(0, -360)
+[node name="SampleBackground" type="Sprite2D" parent="."]
+position = Vector2(958, 539.5)
+scale = Vector2(4.0766, 1.76634)
+texture = ExtResource("2_d5ho8")

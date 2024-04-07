@@ -2,15 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://bmt6u8lhvqu3s" path="res://scenes/player.tscn" id="1_01u8x"]
 [ext_resource type="Texture2D" uid="uid://xctr3uy8dvgw" path="res://assets/MainChar.JPG" id="1_goc6p"]
-[ext_resource type="Texture2D" uid="uid://bji4p8h858hwy" path="res://assets/bg.jpg" id="1_qpw3p"]
 [ext_resource type="PackedScene" uid="uid://cnikp87tisy46" path="res://scenes/player2.tscn" id="2_ppx2s"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_yuut3"]
 [ext_resource type="Resource" uid="uid://bat2mcqe4dd4m" path="res://scripts/p2_controls.tres" id="5_jf0gx"]
+[ext_resource type="Texture2D" uid="uid://b775h0qj0q1os" path="res://assets/sampleBackground.jpg" id="6_j56oj"]
 [ext_resource type="PackedScene" uid="uid://bat2ud4hbaajv" path="res://scenes/Platform_test.tscn" id="7_gjw44"]
 [ext_resource type="PackedScene" uid="uid://d4nhao5bialp8" path="res://scenes/background.tscn" id="8_3ayqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bp8ql"]
-size = Vector2(514, 44)
+size = Vector2(514, 53.9119)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ehns"]
 size = Vector2(95.75, 18.75)
@@ -27,7 +27,7 @@ scale = Vector2(2.51283, 1.07502)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 modulate = Color(0.815686, 0, 0.32549, 1)
-position = Vector2(71.2241, 157.784)
+position = Vector2(71.2241, 156.232)
 shape = SubResource("RectangleShape2D_bp8ql")
 
 [node name="Sprite2D" type="Sprite2D" parent="floor"]
@@ -73,7 +73,6 @@ position = Vector2(1.33763, 98.3135)
 scale = Vector2(0.505035, 0.212867)
 script = ExtResource("4_yuut3")
 controls = ExtResource("5_jf0gx")
-jump_force = 1000
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
@@ -81,16 +80,16 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -328.521
-offset_top = -328.925
+offset_top = -1242.57
 offset_right = 185.48
-offset_bottom = 31.075
+offset_bottom = -630.573
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.01019, 2.5629)
-texture = ExtResource("1_qpw3p")
+texture = ExtResource("6_j56oj")
 metadata/_edit_use_anchors_ = true
 
 [node name="PlatformTest" parent="." instance=ExtResource("7_gjw44")]
-position = Vector2(25.9499, 3.94467)
+position = Vector2(-15.5164, 26.7024)
 
 [node name="Background" parent="." instance=ExtResource("8_3ayqn")]

@@ -9,10 +9,7 @@ func _ready():
 	var y = 0
 	while y > -3000:
 		var new_platform = platform.instantiate()
-		print(-width/2)
-		print(width/2)
-		new_platform.set_position(Vector2(randf_range(-100,150),y))
-		
+		new_platform.set_position(Vector2(randf_range(-125,125),y))
 		add_child(new_platform)
-		y -= randf_range(70,80)
+		y -= randf_range(50,70)
 	pass
