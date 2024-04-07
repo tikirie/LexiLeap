@@ -9,7 +9,8 @@ and see who wins!
 **Tools we used:** 
 - Godot
 - Python (in Visual Studio Code)
-- Princeton's Wordnet 
+- Princeton's Wordnet
+  - "A large lexical database of English. Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept"
   - Princeton University "About WordNet." WordNet. Princeton University. 2010.
 - etc.
 
