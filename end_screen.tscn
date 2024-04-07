@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmh1k2jfaytb0"]
+
+[ext_resource type="Script" path="res://scripts/Restart.gd" id="2_7ndco"]
+[ext_resource type="Texture2D" uid="uid://bo8y2mpv6eklp" path="res://assets/endscreen.png" id="2_ig6up"]
+[ext_resource type="FontVariation" uid="uid://c5gnr8gvlibmp" path="res://assets/press_start.tres" id="3_c1tg0"]
+[ext_resource type="Script" path="res://scripts/Quit_end.gd" id="3_mjgd3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(980, 552)
+scale = Vector2(10.9846, 6.93104)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(964, 544)
+texture = ExtResource("2_ig6up")
+
+[node name="Restart" type="Button" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 656.0
+offset_top = 446.0
+offset_right = 1238.0
+offset_bottom = 704.0
+theme_override_colors/font_color = Color(0.945098, 0.439216, 0.407843, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c1tg0")
+theme_override_font_sizes/font_size = 72
+text = "Restart"
+flat = true
+script = ExtResource("2_7ndco")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1737.0
+offset_top = 18.0
+offset_right = 1898.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0.945098, 0.439216, 0.407843, 1)
+theme_override_fonts/font = ExtResource("3_c1tg0")
+theme_override_font_sizes/font_size = 38
+text = "Quit"
+flat = true
+script = ExtResource("3_mjgd3")
+
+[connection signal="pressed" from="Restart" to="Restart" method="_on_pressed"]
+[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]

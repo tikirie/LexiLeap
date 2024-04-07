@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8821s152dcwr"]
+
+[ext_resource type="Script" path="res://scenes/Platform_test.gd" id="1_6kiqh"]
+[ext_resource type="Texture2D" uid="uid://bi4pwjym2pjra" path="res://assets/platform.png" id="1_q6fsl"]
+
+[node name="PlatformTest" type="StaticBody2D"]
+script = ExtResource("1_6kiqh")
+
+[node name="Platform2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(216, 85.5)
+scale = Vector2(5.95833, 6.6875)
+texture = ExtResource("1_q6fsl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-205.626, 10)
+scale = Vector2(4.24494, 0.854076)
+polygon = PackedVector2Array(67, 40, 111, 26, 137.391, 35.8966, 143, 38, 129, 61, 87, 62)

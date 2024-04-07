@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ghp40"]
 [ext_resource type="Resource" uid="uid://bat2mcqe4dd4m" path="res://scripts/p2_controls.tres" id="2_5uolr"]
-[ext_resource type="Texture2D" uid="uid://dwf3rhx1n6hvr" path="res://icon.svg" id="2_k1rqn"]
+[ext_resource type="Texture2D" uid="uid://dxthscupt8l4k" path="res://assets/player_1.png" id="3_v65rg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dj7bh"]
-size = Vector2(43.5, 42.5)
+size = Vector2(91, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg5v"]
-size = Vector2(41.25, 47)
+size = Vector2(95.5, 45)
 
 [node name="Player" type="CharacterBody2D" groups=["player2"]]
 position = Vector2(-168, -167)
@@ -19,16 +19,17 @@ controls = ExtResource("2_5uolr")
 gravity = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(189, 188)
-scale = Vector2(0.38047, 0.430977)
-texture = ExtResource("2_k1rqn")
+texture_filter = 1
+position = Vector2(236.956, 237.052)
+scale = Vector2(6, 6.211)
+texture = ExtResource("3_v65rg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(189.25, 191.25)
+position = Vector2(235, 302)
 shape = SubResource("RectangleShape2D_dj7bh")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(190.375, 190.5)
+position = Vector2(235.25, 301)
 shape = SubResource("RectangleShape2D_ntg5v")

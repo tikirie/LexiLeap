@@ -13,6 +13,7 @@ offset_left = 19.0
 offset_top = 149.0
 offset_right = 100.0
 offset_bottom = 172.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Word1
 "
@@ -22,6 +23,7 @@ offset_left = 18.0
 offset_top = 338.0
 offset_right = 69.0
 offset_bottom = 361.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Word2
 "
@@ -31,6 +33,7 @@ offset_left = 18.0
 offset_top = 556.0
 offset_right = 69.0
 offset_bottom = 579.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Word3
 "
@@ -40,6 +43,7 @@ offset_left = 25.0
 offset_top = 773.0
 offset_right = 76.0
 offset_bottom = 796.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Word4
 "
@@ -49,5 +53,6 @@ offset_left = 26.0
 offset_top = 974.0
 offset_right = 77.0
 offset_bottom = 997.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Word5"

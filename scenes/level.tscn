@@ -1,13 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://uv858we4b41t"]
+[gd_scene load_steps=9 format=3 uid="uid://uv858we4b41t"]
 
 [ext_resource type="PackedScene" uid="uid://bmt6u8lhvqu3s" path="res://scenes/player.tscn" id="1_01u8x"]
-[ext_resource type="Texture2D" uid="uid://xctr3uy8dvgw" path="res://assets/MainChar.JPG" id="1_qpw3p"]
+[ext_resource type="PackedScene" uid="uid://c8821s152dcwr" path="res://scenes/Platform_test.tscn" id="1_612l2"]
+[ext_resource type="Script" path="res://scripts/Platform_test.gd" id="2_hk1k5"]
 [ext_resource type="PackedScene" uid="uid://cnikp87tisy46" path="res://scenes/player2.tscn" id="2_ppx2s"]
-[ext_resource type="Resource" path="res://scripts/p1_controls.tres" id="3_q6uxf"]
+[ext_resource type="Script" path="res://scenes/finalcloud.gd" id="3_gspqj"]
+[ext_resource type="Resource" uid="uid://bisasoav4hu3u" path="res://scripts/p1_controls.tres" id="3_q6uxf"]
 [ext_resource type="PackedScene" uid="uid://b32p673aeh1hh" path="res://scenes/main.tscn" id="7_lxewc"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ehns"]
-size = Vector2(95.75, 18.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bp8ql"]
 size = Vector2(514, 44)
@@ -15,22 +14,16 @@ size = Vector2(514, 44)
 [node name="Level" type="Node2D"]
 position = Vector2(240, 878)
 
-[node name="platform2" type="StaticBody2D" parent="."]
-modulate = Color(0.419608, 0.160784, 0.113725, 1)
-position = Vector2(135.902, 68.2734)
-scale = Vector2(0.540237, 0.456524)
-collision_mask = 2
+[node name="PlatformTest" parent="." instance=ExtResource("1_612l2")]
+position = Vector2(-52.4348, 83.7486)
+scale = Vector2(0.403894, 0.393463)
+script = ExtResource("2_hk1k5")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="platform2"]
-modulate = Color(0.0666667, 0.0352941, 1, 1)
-position = Vector2(-181.875, 77.375)
-shape = SubResource("RectangleShape2D_1ehns")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="platform2"]
-position = Vector2(-182.728, 77.7662)
-scale = Vector2(0.255505, 0.0550547)
-texture = ExtResource("1_qpw3p")
+[node name="PlatformTest2" parent="." instance=ExtResource("1_612l2")]
+position = Vector2(1674, -675)
+rotation = 3.14159
+scale = Vector2(4, 3.891)
+script = ExtResource("3_gspqj")
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2(503, 0)
@@ -42,71 +35,15 @@ modulate = Color(0.815686, 0, 0.32549, 1)
 position = Vector2(0, 156)
 shape = SubResource("RectangleShape2D_bp8ql")
 
-[node name="Sprite2D" type="Sprite2D" parent="floor"]
-position = Vector2(-12.8821, 162.3)
-scale = Vector2(1.54704, -0.148505)
-texture = ExtResource("1_qpw3p")
-
-[node name="platform3" type="StaticBody2D" parent="."]
-modulate = Color(0.419608, 0.160784, 0.113725, 1)
-position = Vector2(-71.1615, 55.8324)
-scale = Vector2(0.163131, 0.154813)
-collision_mask = 2
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="platform3"]
-modulate = Color(0.419608, 0.160784, 0.113725, 1)
-position = Vector2(-182.033, 82.321)
-shape = SubResource("RectangleShape2D_1ehns")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="platform3"]
-position = Vector2(-185.313, 80.361)
-scale = Vector2(0.243879, 0.071994)
-texture = ExtResource("1_qpw3p")
-
-[node name="platform" type="StaticBody2D" parent="."]
-modulate = Color(0.419608, 0.160784, 0.113725, 1)
-position = Vector2(-52.4348, 83.7486)
-scale = Vector2(0.403894, 0.393463)
-collision_mask = 2
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="platform"]
-modulate = Color(0.0666667, 0.0352941, 1, 1)
-position = Vector2(-181.875, 77.375)
-shape = SubResource("RectangleShape2D_1ehns")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="platform"]
-position = Vector2(-182.15, 77.1196)
-scale = Vector2(0.255505, 0.0550547)
-texture = ExtResource("1_qpw3p")
-
 [node name="Player" parent="." instance=ExtResource("1_01u8x")]
 position = Vector2(-222, -76)
 controls = ExtResource("3_q6uxf")
-gravity = 30
+gravity = 20
 
 [node name="Player2" parent="." instance=ExtResource("2_ppx2s")]
-position = Vector2(-4.00001, 65)
+position = Vector2(600, 0)
 scale = Vector2(0.492359, 0.354558)
 jump_force = 300
 
 [node name="Main" parent="." instance=ExtResource("7_lxewc")]
 position = Vector2(-145.534, -883.608)
-
-[node name="platform4" type="StaticBody2D" parent="."]
-modulate = Color(0.419608, 0.160784, 0.113725, 1)
-position = Vector2(-34.7782, 10.3169)
-scale = Vector2(0.163131, 0.154813)
-collision_mask = 2
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="platform4"]
-modulate = Color(0.419608, 0.160784, 0.113725, 1)
-position = Vector2(-182.033, 82.321)
-shape = SubResource("RectangleShape2D_1ehns")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="platform4"]
-position = Vector2(-185.313, 80.361)
-scale = Vector2(0.243879, 0.071994)
-texture = ExtResource("1_qpw3p")

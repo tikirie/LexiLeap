@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var controls: Resource = null
 @export var speed = 300
-@export var gravity = 30
-@export var jump_force = 600
+@export var gravity = 20
+@export var jump_force = 900
 
 var powerup = false
 var stunned = false
