@@ -19,4 +19,3 @@ func _ready() -> void:
 		var remote_transform := RemoteTransform2D.new()
 		remote_transform.remote_path = node.camera.get_path()
 		node.player.add_child(remote_transform)
-		

@@ -1,13 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4nhao5bialp8"]
+[gd_scene load_steps=3 format=3 uid="uid://6m0y840e0ck2"]
 
-[ext_resource type="Texture2D" uid="uid://bji4p8h858hwy" path="res://assets/bg.jpg" id="1_bhyta"]
+[ext_resource type="Texture2D" uid="uid://c65qohcad2t74" path="res://assets/sampleBackground.jpg" id="1_gnkdo"]
 
-[node name="Background" type="ParallaxBackground"]
+[sub_resource type="GDScript" id="GDScript_v8ep0"]
+script/source = "extends ParallaxBackground
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	scroll_offset.y += 40*delta
+	
+"
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = SubResource("GDScript_v8ep0")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(0, 360)
+motion_mirroring = Vector2(0, 571)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-texture_filter = 1
-texture = ExtResource("1_bhyta")
-offset = Vector2(0, -360)
+position = Vector2(194, -3339)
+scale = Vector2(47.4871, 14.9607)
+texture = ExtResource("1_gnkdo")
