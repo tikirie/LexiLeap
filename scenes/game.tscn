@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://vipat44het8h"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_7r04w"]
+[ext_resource type="PackedScene" uid="uid://uv858we4b41t" path="res://scenes/level.tscn" id="1_enged"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_7r04w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 1924.0
+offset_bottom = 1080.0
+
+[node name="ViewportContainer1" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Viewport1" type="SubViewport" parent="HBoxContainer/ViewportContainer1"]
+handle_input_locally = false
+size = Vector2i(960, 1080)
+render_target_update_mode = 4
+
+[node name="Level" parent="HBoxContainer/ViewportContainer1/Viewport1" instance=ExtResource("1_enged")]
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/ViewportContainer1/Viewport1"]
+position = Vector2(-0.000183105, 6.10352e-05)
+limit_left = 0
+limit_top = -3000
+limit_right = 1800
+limit_bottom = 1300
+editor_draw_limits = true
+
+[node name="ViewportContainer2" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Viewport2" type="SubViewport" parent="HBoxContainer/ViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(960, 1080)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/ViewportContainer2/Viewport2"]
+limit_left = 0
+limit_top = -3000
+limit_right = 1800
+limit_bottom = 1300
