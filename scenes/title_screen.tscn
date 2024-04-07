@@ -21,6 +21,7 @@ texture = ExtResource("1_tfhs5")
 
 [node name="Start" type="Button" parent="."]
 top_level = true
+layout_mode = 0
 offset_left = 648.0
 offset_top = 686.0
 offset_right = 1230.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://uv858we4b41t"]
+[gd_scene load_steps=12 format=3 uid="uid://uv858we4b41t"]
 
 [ext_resource type="PackedScene" uid="uid://bmt6u8lhvqu3s" path="res://scenes/player.tscn" id="1_01u8x"]
 [ext_resource type="Texture2D" uid="uid://xctr3uy8dvgw" path="res://assets/MainChar.JPG" id="1_goc6p"]
@@ -6,12 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://cnikp87tisy46" path="res://scenes/player2.tscn" id="2_ppx2s"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_yuut3"]
 [ext_resource type="Resource" uid="uid://bat2mcqe4dd4m" path="res://scripts/p2_controls.tres" id="5_jf0gx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ehns"]
-size = Vector2(95.75, 18.75)
+[ext_resource type="PackedScene" uid="uid://bat2ud4hbaajv" path="res://scenes/Platform_test.tscn" id="7_gjw44"]
+[ext_resource type="PackedScene" uid="uid://d4nhao5bialp8" path="res://scenes/background.tscn" id="8_3ayqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bp8ql"]
 size = Vector2(514, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ehns"]
+size = Vector2(95.75, 18.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2bh1"]
 size = Vector2(20, 307)
@@ -20,49 +22,17 @@ size = Vector2(20, 307)
 position = Vector2(947, 595)
 scale = Vector2(3.73797, 3.29558)
 
-[node name="platform2" type="StaticBody2D" parent="."]
-modulate = Color(0.419608, 0.160784, 0.113725, 1)
-position = Vector2(135.902, 68.2734)
-scale = Vector2(0.540237, 0.456524)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="platform2"]
-modulate = Color(0.0666667, 0.0352941, 1, 1)
-position = Vector2(-181.875, 77.375)
-shape = SubResource("RectangleShape2D_1ehns")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="platform2"]
-position = Vector2(-182.728, 77.7662)
-scale = Vector2(0.255505, 0.0550547)
-texture = ExtResource("1_goc6p")
-
 [node name="floor" type="StaticBody2D" parent="."]
 scale = Vector2(2.51283, 1.07502)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 modulate = Color(0.815686, 0, 0.32549, 1)
-position = Vector2(0, 156)
+position = Vector2(71.2241, 157.784)
 shape = SubResource("RectangleShape2D_bp8ql")
 
 [node name="Sprite2D" type="Sprite2D" parent="floor"]
-position = Vector2(-12.8821, 162.3)
-scale = Vector2(0.825289, 0.15811)
-texture = ExtResource("1_goc6p")
-
-[node name="platform3" type="StaticBody2D" parent="."]
-modulate = Color(0.419608, 0.160784, 0.113725, 1)
-position = Vector2(-71.1615, 55.8324)
-scale = Vector2(0.163131, 0.154813)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="platform3"]
-modulate = Color(0.419608, 0.160784, 0.113725, 1)
-position = Vector2(-182.033, 82.321)
-shape = SubResource("RectangleShape2D_1ehns")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="platform3"]
-position = Vector2(-185.313, 80.361)
-scale = Vector2(0.243879, 0.071994)
+position = Vector2(74.631, 157.502)
+scale = Vector2(1.02269, 0.15811)
 texture = ExtResource("1_goc6p")
 
 [node name="platform" type="StaticBody2D" parent="."]
@@ -84,38 +54,43 @@ texture = ExtResource("1_goc6p")
 [node name="wall_Left" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="wall_Left"]
-position = Vector2(-164.528, 13.9581)
+position = Vector2(22.7396, 19.1165)
 shape = SubResource("RectangleShape2D_r2bh1")
 
 [node name="wall_right" type="StaticBody2D" parent="."]
 position = Vector2(369.184, 3.33781)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="wall_right"]
-position = Vector2(182.452, 26.399)
+position = Vector2(-14.7136, 18.2062)
 shape = SubResource("RectangleShape2D_r2bh1")
 
 [node name="Player" parent="." instance=ExtResource("1_01u8x")]
-position = Vector2(-137.775, 72.8249)
+position = Vector2(76.5121, 84.9623)
 scale = Vector2(0.641575, 0.245283)
 
 [node name="Player2" parent="." instance=ExtResource("2_ppx2s")]
-position = Vector2(-11.5035, 87.0865)
+position = Vector2(1.33763, 98.3135)
 scale = Vector2(0.505035, 0.212867)
 script = ExtResource("4_yuut3")
 controls = ExtResource("5_jf0gx")
-jump_force = 800
+jump_force = 1000
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -464.423
-offset_top = -405.089
-offset_right = 49.5773
-offset_bottom = -45.0886
+offset_left = -328.521
+offset_top = -328.925
+offset_right = 185.48
+offset_bottom = 31.075
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.01019, 2.5629)
 texture = ExtResource("1_qpw3p")
 metadata/_edit_use_anchors_ = true
+
+[node name="PlatformTest" parent="." instance=ExtResource("7_gjw44")]
+position = Vector2(25.9499, 3.94467)
+
+[node name="Background" parent="." instance=ExtResource("8_3ayqn")]
